@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <ImplicitUsings>enable</ImplicitUsings> 
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace></RootNamespace>
+    <NoWarn>CS0649;CS0169</NoWarn>
+    <FalloutRootDirectory>..\</FalloutRootDirectory>
+    <FalloutScriptDirectory>..\</FalloutScriptDirectory>
+    <FalloutVersion>10.4.0</FalloutVersion>
+    <FalloutTelemetryVersion>1</FalloutTelemetryVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageDownload Include="GitVersion.Tool" Version="[6.8.2]" />
+    <PackageDownload Include="ReportGenerator" Version="[5.5.10]" />
+    <PackageDownload Include="xunit.runner.console" Version="[2.9.3]" />
+    <PackageDownload Include="PackageGuard" Version="[1.6.1]" />
+    <PackageReference Include="LibGit2Sharp" Version="0.31.0" />
+    <PackageReference Include="Fallout.Common" Version="$(FalloutVersion)" />
+    <PackageReference Include="Fallout.Components" Version="$(FalloutVersion)" />
+    <PackageReference Include="SharpCompress" Version="0.49.1" />
+    <PackageReference Include="Octokit" Version="14.0.0" />
+    <PackageDownload Include="nbgv" Version="[3.10.91]" />
+    <PackageReference Include="NuGet.Frameworks" Version="7.9.0" />
+  </ItemGroup>
+</Project>
