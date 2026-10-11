@@ -1,0 +1,79 @@
+name: Manual Paket Update
+
+on:
+  workflow_dispatch:
+    inputs:
+      update_group:
+        description: 'Specific group to update (optional, leave empty for all)'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  paket-update:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x' # Adjust to match your SDK version
+
+      - name: Restore Local Tools
+        run: dotnet tool restore
+        
+      - name: Extract Split Archive
+        shell: pwsh
+        env:
+          ZIP_PWD: ${{ secrets.DxPass }}
+        run: |
+          $packageName = "lib/packages/dx.zip.001"
+          $outputDir = "support/nupkg"
+
+          if (!(Test-Path $outputDir)) { New-Item -ItemType Directory -Path $outputDir }
+
+          # Access the environment variable using $env:
+          & 7z x "$packageName" -p"$env:ZIP_PWD" "-o$outputDir" -y
+
+    
+      - name: Run Paket Update
+        id: paket
+        run: dotnet paket update
+          
+      
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          
+          # Branch Configuration
+          branch: feature/paket-update
+          delete-branch: true
+          
+          # PR Content
+          title: "Paket Dependency Update"
+          body: |
+            ## Manual Update Triggered
+            
+            This update was triggered manually by @${{ github.actor }}.
+            
+            **Changes:**
+            - `paket.lock` (Updated versions)
+            - `paket.references` (If applicable)
+            
+          # COMMIT IDENTITY CONFIGURATION
+          # This maps the commit to the user who pressed the button
+          author: ${{ github.actor }} <${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com>
+          committer: GitHub <noreply@github.com>
+          commit-message: "chore(deps): update paket dependencies"
+          
+          # Labels
+          labels: |
+            dependencies
+            manual-trigger

@@ -1,0 +1,140 @@
+name: Archive Dx
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  paket-update:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x' # Adjust to match your SDK version
+
+      - name: Restore Local Tools
+        run: dotnet tool restore
+
+      - name: Patch paket.dependencies
+        shell: pwsh
+        env:
+          PAKET_SOURCE: ${{ secrets.DXSOURCE }}
+        run: |
+          $file = "paket.dependencies"
+          $bak  = "$file.bak"
+          if (-not (Test-Path $file)) {
+            Write-Host "No $file found, skipping patch."
+            exit 0
+          }
+
+          # Backup original so we can restore later
+          Copy-Item -Force $file $bak
+
+          # Trim the secret and skip if empty
+          $sourceContent = $env:PAKET_SOURCE
+          if ([string]::IsNullOrWhiteSpace($sourceContent)) {
+            Write-Host "PAKET_SOURCE is empty; leaving file unchanged."
+            exit 0
+          }
+
+          # If the exact source content already exists in the file, do nothing
+          try {
+            $already = Select-String -Path $file -Pattern ([regex]::Escape($sourceContent)) -SimpleMatch -Quiet
+          } catch {
+            $already = $false
+          }
+          if ($already) {
+            Write-Host "Source content already present in $file; skipping insert."
+            exit 0
+          }
+
+          # Prepend the secret content (keeps original file after it)
+          $tmp = "$file.tmp"
+          $sourceContent | Out-File -FilePath $tmp -Encoding utf8
+          "" | Out-File -FilePath $tmp -Encoding utf8 -Append
+          Get-Content -Raw -Path $file | Out-File -FilePath $tmp -Encoding utf8 -Append
+          Move-Item -Force $tmp $file
+          Write-Host "Inserted source from secret into top of $file (backup at $bak)."
+
+      - name: Run Paket Update
+        id: paket
+        run: dotnet paket update
+        
+      - name: restore paket.dependencies
+        shell: pwsh
+        run: |
+          $file = "paket.dependencies"
+          $bak  = "$file.bak"
+          if (Test-Path $bak) {
+            Move-Item -Force $bak $file
+            Write-Host "Restored original $file from backup."
+          } else {
+            Write-Host "No backup ($bak) found; nothing to restore."
+          }
+          
+      - name: Zip DevExpress Packages
+        shell: pwsh
+        env:
+          ZIP_PWD: ${{ secrets.DXPASS }}
+        run: |
+          $repoRoot   = $env:GITHUB_WORKSPACE
+          $outputDir  = Join-Path $repoRoot "lib/packages"
+          $packageName = Join-Path $outputDir "dx.zip"
+    
+          $filesToZip = Get-ChildItem -Path "packages" -Filter "devexpress*.nupkg" -Recurse
+          if ($filesToZip.Count -eq 0) { exit 0 }
+
+          # Ensure destination directory exists
+          New-Item -ItemType Directory -Path $outputDir -Force | Out-Null
+    
+          # --- Echo packages to be archived ---
+          Write-Host "The following packages will be archived:"
+          $filesToZip.FullName | ForEach-Object { Write-Host " - $_" }
+          Write-Host "------------------------------------"
+          
+          # Access the environment variable using $env:
+          & 7z a -p"$env:ZIP_PWD" -v50m "$packageName" $($filesToZip.FullName) -y
+      - name: Git Add Zipped Packages
+        shell: pwsh
+        run: |
+          git add -f lib/packages
+          git status --untracked-files=all
+  
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          
+          # Branch Configuration
+          branch: feature/paket-update
+          delete-branch: true
+          
+          # PR Content
+          title: "Paket Dependency Update"
+          body: |
+            ## Manual Update Triggered
+            
+            This update was triggered manually by @${{ github.actor }}.
+            
+            **Changes:**
+            - `paket.lock` (Updated versions)
+            - `paket.references` (If applicable)
+            
+          # COMMIT IDENTITY CONFIGURATION
+          # This maps the commit to the user who pressed the button
+          author: ${{ github.actor }} <${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com>
+          committer: GitHub <noreply@github.com>
+          commit-message: "chore(deps): update paket dependencies"
+          
+          # Labels
+          labels: |
+            dependencies
+            manual-trigger

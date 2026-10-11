@@ -1,0 +1,87 @@
+
+name: Build Complete
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  paket-update:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v7
+        with:
+           fetch-depth: 0
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.103'
+          cache: true
+          cache-dependency-path: |
+            **/*.csproj
+            **/*.fsproj
+            **/*.sln
+            **/packages.lock.json
+            Directory.Packages.props
+            Directory.Build.props
+      
+      - name: Restore tools
+        run: dotnet tool restore
+
+      - name: Extract Split Archive
+        shell: pwsh
+        env:
+          ZIP_PWD: ${{ secrets.DxPass }}
+        run: |
+          $packageName = "lib/packages/dx.zip.001"
+          $outputDir = "support/nupkg"
+
+          if (!(Test-Path $outputDir)) { New-Item -ItemType Directory -Path $outputDir }
+
+          # Access the environment variable using $env:
+          & 7z x "$packageName" -p"$env:ZIP_PWD" "-o$outputDir" -y
+            
+        
+      - name: Install wix
+        run: dotnet tool install --global wix --version 6.0.2
+
+      - name: Add wix extensions
+        run: wix extension add -g WixToolset.UI.wixext/6.0.2
+            
+      - name: Prepare Interactive Environment
+        shell: powershell
+        run: |
+          Set-DisplayResolution -Width 1920 -Height 1080 -Force
+          Set-ItemProperty -Path "HKCU:\Control Panel\Desktop" -Name "ScreenSaveActive" -Value 0
+          
+      - name: Run Fallout
+        run: ./build.ps1
+        env:
+          NuGetApiKey: ${{ secrets.NUGETAPIKEY }}
+          GitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          AppKey: ${{ secrets.LICKEY }}
+        
+        
+      - name: Upload test result images
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-result-images
+          path: |
+            artifacts/attachments/testresults/**/*.png
+            artifacts/attachments/testresults/**/*.jpg
+            artifacts/attachments/testresults/**/*.jpeg
+            artifacts/attachments/testresults/**/*.gif
+            artifacts/attachments/testresults/**/*.bmp
+            artifacts/attachments/testresults/**/*.avi
+          if-no-files-found: ignore
+        
+    
