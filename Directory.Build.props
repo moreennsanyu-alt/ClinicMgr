@@ -1,0 +1,17 @@
+﻿<!-- See https://aka.ms/dotnet/msbuild/customize for more details on customizing your build -->
+<Project>
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <NoWarn>$(NoWarn);NU1510;CS8601;CS8600</NoWarn>
+    <ArtifactsPath>$(MSBuildThisFileDirectory)artifacts</ArtifactsPath>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Configurations>Debug;Release;E2ETests;CI</Configurations>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Constant Include="Foo.Bar" Value="Baz" Comment="Yay!" />
+    <Constant Include="Foo.Hello" Value="World" Comment="Comments make everything better 😍" />
+  </ItemGroup>
+</Project>

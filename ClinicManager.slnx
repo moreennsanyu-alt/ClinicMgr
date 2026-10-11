@@ -1,0 +1,44 @@
+<Solution>
+      <Configurations>
+        <Platform Name="Any CPU" />
+        <BuildType Name="Debug" />
+        <BuildType Name="Release" />
+        <BuildType Name="E2ETests" />
+        <BuildType Name="CI" />
+    </Configurations>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path=".gitignore" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
+    <File Path="global.json" />
+    <File Path="README.md" />
+  </Folder>
+  <Folder Name="/Desktop/">
+    <Project Path="Src/Desktop/ClinicManager.Win/ClinicManager.Win.csproj" />
+  </Folder>
+
+  <Folder Name="/Desktop.Tests/">
+    <Project Path="Src/Desktop.Tests/ClinicManager.E2E.Tests/ClinicManager.E2E.Tests.csproj" />
+    <Project Path="Src/Desktop.Tests/ClinicManager.Win.Tests/ClinicManager.Win.Tests.csproj" />
+  </Folder>
+
+  <Folder Name="/Server/">
+    <Project Path="Src/Server/Application/Application.csproj" />
+    <Project Path="Src/Server/Domain/Domain.csproj" />
+    <Project Path="Src/Server/Infrastructure/Infrastructure.csproj" />
+    <Project Path="Src/Server/Web/Web.csproj" />
+  </Folder>
+
+  <Folder Name="/Server.Tests/">
+    <Project Path="Src/Server.Tests/Application.FunctionalTests/Application.FunctionalTests.csproj" />
+    <Project Path="Src/Server.Tests/Application.UnitTests/Application.UnitTests.csproj" />
+    <Project Path="Src/Server.Tests/Domain.UnitTests/Domain.UnitTests.csproj" />
+    <Project Path="Src/Server.Tests/Infrastructure.IntegrationTests/Infrastructure.IntegrationTests.csproj" />
+  </Folder>
+  <Folder Name="/Installers/">
+    <Project Path="Src/Installers/ClinicManager.Setup/ClinicManager.Setup.csproj">
+      <Build Solution="*|*" Project="false" />
+    </Project>
+  </Folder>
+</Solution>
