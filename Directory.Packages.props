@@ -1,0 +1,80 @@
+<Project>
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <!-- Set this to your installed Syncfusion version -->
+    <SyncfusionVersion>31.1.17</SyncfusionVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageVersion Include="Newtonsoft.Json" Version="13.0.4" />
+
+    <PackageVersion Include="Syncfusion.Licensing" Version="$(SyncfusionVersion)" />
+
+    <!-- Smart / AI -->
+    <PackageVersion Include="Syncfusion.SfSmartComponents.WPF" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.SmartFormRecognizer.Wpf" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.SfChat.WPF" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.SfMarkdownViewer.WPF" Version="$(SyncfusionVersion)" />
+
+    <!-- Themes / Skin -->
+    <PackageVersion Include="Syncfusion.SfSkinManager.WPF" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.Themes.Windows11Dark.WPF" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.Themes.Windows11Light.WPF" Version="$(SyncfusionVersion)" />
+
+    <!-- Document processing -->
+    <PackageVersion Include="Syncfusion.Pdf.Wpf" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.Pdf.Net.Core" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.PdfToImageConverter.WPF" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.PdfViewer.WPF" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.DocIO.Wpf" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.XlsIO.Wpf" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.XlsIO.Net.Core" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.ExcelToPdfConverter.Wpf" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.OfficeChart.Base" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.DataGridExcelExport.Wpf" Version="$(SyncfusionVersion)" />
+
+    <!-- Grids / Pivot / Data -->
+    <PackageVersion Include="Syncfusion.SfGrid.WPF" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.Grid.WPF" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.GridCommon.Wpf" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.PivotTable.Wpf" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.PivotAnalysis.Base" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.OlapGrid.WPF" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.OlapGauge.WPF" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.OlapShared.WPF" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.Data.WPF" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.Grouping.Base" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.Linq.Base" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.Calculate.Base" Version="$(SyncfusionVersion)" />
+
+    <!-- Charts / Gauges / Maps -->
+    <PackageVersion Include="Syncfusion.SfChart.WPF" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.SfSunburstChart.WPF" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.SfSmithChart.WPF" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.SfGauge.WPF" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.SfBulletGraph.WPF" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.SfMaps.WPF" Version="$(SyncfusionVersion)" />
+
+    <!-- UI controls -->
+    <PackageVersion Include="Syncfusion.SfToastNotification.WPF" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.SfHubTile.WPF" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.SfSpellChecker.WPF" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.SfTextInputLayout.WPF" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.SfChromelessWindow.WPF" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.SfScheduler.WPF" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.SfKanban.WPF" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.SfNavigationDrawer.WPF" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.Edit.WPF" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.SfProgressBar.WPF" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.SfTreeView.WPF" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.SfAccordion.WPF" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.PropertyGrid.WPF" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.SfRichTextBoxAdv.WPF" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.SfRadialMenu.WPF" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.SfBusyIndicator.WPF" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.SfInput.WPF" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.Tools.WPF" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.Shared.WPF" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.Shared.Base" Version="$(SyncfusionVersion)" />
+  </ItemGroup>
+</Project>
