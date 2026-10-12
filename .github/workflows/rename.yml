@@ -1,0 +1,44 @@
+name: Refactor Namespaces
+
+on:
+  workflow_dispatch:
+    inputs:
+      old_namespace:
+        description: 'CleanArchitecture'
+        required: true
+        type: string
+      new_namespace:
+        description: 'ClinicManager'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  refactor:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Run namespace replacement
+        env:
+          OLD: ${{ inputs.old_namespace }}
+          NEW: ${{ inputs.new_namespace }}
+        run: |
+          find . -type f \( -name "*.cs" -o -name "*.php" -o -name "*.java" -o -name "*.ts" \) \
+            -not -path '*/.*' \
+            -exec sed -i "s|$OLD|$NEW|g" {} +
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "Refactor: change namespace from ${{ inputs.old_namespace }} to ${{ inputs.new_namespace }}"
+          title: "Refactor namespaces from ${{ inputs.old_namespace }} to ${{ inputs.new_namespace }}"
+          body: "Automated refactoring workflow to update code namespaces."
+          branch: refactor-namespace-${{ github.run_id }}
+          delete-branch: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
