@@ -35,20 +35,7 @@ jobs:
       
       - name: Restore tools
         run: dotnet tool restore
-
-      - name: Extract Split Archive
-        shell: pwsh
-        env:
-          ZIP_PWD: ${{ secrets.DxPass }}
-        run: |
-          $packageName = "lib/packages/dx.zip.001"
-          $outputDir = "support/nupkg"
-
-          if (!(Test-Path $outputDir)) { New-Item -ItemType Directory -Path $outputDir }
-
-          # Access the environment variable using $env:
-          & 7z x "$packageName" -p"$env:ZIP_PWD" "-o$outputDir" -y
-            
+      
         
       - name: Install wix
         run: dotnet tool install --global wix --version 6.0.2
