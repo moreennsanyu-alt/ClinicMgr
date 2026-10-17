@@ -1,0 +1,12 @@
+<Window x:Class="ClinicManager.Win.Views.ShellWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Clinic Manager"
+        Width="1200"
+        Height="800"
+        WindowStartupLocation="CenterScreen"
+        AutomationProperties.AutomationId="ShellWindow">
+    <Grid Background="#F5F5F5">
+        <ContentControl x:Name="MainContent" />
+    </Grid>
+</Window>
