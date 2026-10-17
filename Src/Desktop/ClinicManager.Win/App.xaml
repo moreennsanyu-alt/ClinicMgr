@@ -1,0 +1,15 @@
+<Application x:Class="ClinicManager.Win.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ClinicManager.Win">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!-- General (colors, brushes, common styles) -->
+                <ResourceDictionary Source="/ClinicManager.Win;component/Resources/Styles/GeneralDictionary.xaml" />
+                <!-- Control specific styles -->
+                <ResourceDictionary Source="/ClinicManager.Win;component/Resources/Styles/ControlStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
