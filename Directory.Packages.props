@@ -6,8 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageVersion Include="Newtonsoft.Json" Version="13.0.4" />
-
     <PackageVersion Include="Syncfusion.Licensing" Version="$(SyncfusionVersion)" />
 
     <!-- Smart / AI -->
@@ -76,5 +74,143 @@
     <PackageVersion Include="Syncfusion.Tools.WPF" Version="$(SyncfusionVersion)" />
     <PackageVersion Include="Syncfusion.Shared.WPF" Version="$(SyncfusionVersion)" />
     <PackageVersion Include="Syncfusion.Shared.Base" Version="$(SyncfusionVersion)" />
+    
+      <!--  Prism  -->
+  <ItemGroup>
+    <PackageVersion Include="Prism.Core" Version="8.1.97" />
+    <PackageVersion Include="Prism.Wpf" Version="8.1.97" />
+    <PackageVersion Include="Prism.DryIoc" Version="8.1.97" />
+  </ItemGroup>
+
+  <!--  System / transitive pins  -->
+  <ItemGroup>
+    <PackageVersion Include="ThisAssembly.Constants" Version="2.1.5" />
+    <PackageVersion Include="System.Security.AccessControl" Version="6.0.1" />
+    <PackageVersion Include="System.Security.Cryptography.Xml" Version="10.0.12" />
+    <PackageVersion Include="System.Text.Json" Version="10.0.12" />
+    <PackageVersion Include="System.Runtime.CompilerServices.Unsafe" Version="6.1.2" />
+    <PackageVersion Include="System.Collections.Immutable" Version="10.0.12" />
+    <PackageVersion Include="Microsoft.Windows.Compatibility" Version="10.0.12" />
+    <PackageVersion Include="Microsoft.Bcl.AsyncInterfaces" Version="10.0.12" />
+    <PackageVersion Include="System.Reflection.Metadata" Version="10.0.12" />
+    <PackageVersion Include="Microsoft.CodeAnalysis" Version="5.0.0" />
+    <PackageVersion Include="System.ValueTuple" Version="4.6.2" />
+    <PackageVersion Include="System.Memory" Version="4.6.3" />
+    <PackageVersion Include="Microsoft.VisualBasic" Version="10.3.0" />
+    <PackageVersion Include="System.Diagnostics.DiagnosticSource" Version="10.0.12" />
+    <PackageVersion Include="System.Net.Http" Version="4.3.4" />
+    <PackageVersion Include="System.Text.RegularExpressions" Version="4.3.1" />
+  </ItemGroup>
+
+  <!-- Testing  -->
+  <ItemGroup>
+    <PackageVersion Include="xunit.v3" Version="4.0.0" />
+    <PackageVersion Include="FluentAssertions" Version="8.5.0" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="4.0.0" />
+    <PackageVersion Include="Moq" Version="4.20.72" />
+    <PackageVersion Include="nunit" Version="4.6.1" />
+    <PackageVersion Include="NUnit.Analyzers" Version="4.12.0" />
+    <PackageVersion Include="NUnit3TestAdapter" Version="6.2.0" />
+    <PackageVersion Include="Shouldly" Version="4.3.0" />
+    <PackageVersion Include="xunit.v3.extensibility.core" Version="4.0.0" />
+    <PackageVersion Include="Microsoft.Testing.Extensions.CodeCoverage" Version="18.8.0" />
+    <PackageVersion Include="Microsoft.TestPlatform.ObjectModel" Version="18.8.1" />
+    <PackageVersion Include="Microsoft.Testing.Platform" Version="2.4.1" />
+    <PackageVersion Include="Microsoft.Testing.Platform.MSBuild" Version="2.4.1" />
+    <PackageVersion Include="coverlet.collector" Version="10.0.1" />
+    <PackageVersion Include="FlaUI.Core.Signed" Version="5.0.0" />
+    <PackageVersion Include="FlaUI.UIA2.Signed" Version="5.0.0" />
+    <PackageVersion Include="FlaUI.UIA3.Signed" Version="5.0.0" />
+    <PackageVersion Include="FlaUI.TestUtilities" Version="5.0.0" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.3.0" />
+    <PackageVersion Include="Respawn" Version="7.0.0" />
+  </ItemGroup>
+
+  <!--  Microsoft.Extensions family  -->
+  <ItemGroup>
+    <PackageVersion Include="Microsoft.Extensions.Hosting" Version="10.0.12" />
+    <PackageVersion Include="Microsoft.Extensions.Logging" Version="10.0.12" />
+    <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="10.0.12" />
+    <PackageVersion Include="Microsoft.Extensions.Logging.Console" Version="10.0.12" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration" Version="10.0.12" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration.Xml" Version="10.0.12" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration.CommandLine" Version="10.0.12" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration.UserSecrets" Version="10.0.12" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration.FileExtensions" Version="10.0.12" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration.Binder" Version="10.0.12" />
+    <PackageVersion Include="Microsoft.Extensions.Options" Version="10.0.12" />
+    <PackageVersion Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="10.0.12" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration.Json" Version="10.0.12" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="10.0.12" />
+    <PackageVersion Include="Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore" Version="10.0.3" />
+    <PackageVersion Include="Microsoft.Extensions.ApiDescription.Server" Version="10.0.12" />
+    <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="10.3.0" />
+    <PackageVersion Include="Microsoft.Extensions.ServiceDiscovery" Version="10.3.0" />
+  </ItemGroup>
+
+  <!-- ASP.NET Core / EF Core  -->
+  <ItemGroup>
+    <PackageVersion Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="10.0.12" />
+    <PackageVersion Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="10.0.12" />
+    <PackageVersion Include="Microsoft.AspNetCore.Mvc.Testing" Version="10.0.12" />
+    <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="10.0.12" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="10.0.12" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.12" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Relational" Version="10.0.12" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.12" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Sqlite" Version="10.0.12" />
+    <PackageVersion Include="Microsoft.Data.SqlClient" Version="6.1.4" />
+    <PackageVersion Include="Microsoft.Build.Tasks.Core" Version="18.3.3" />
+    <PackageVersion Include="Microsoft.Build.Utilities.Core" Version="18.3.3" />
+  </ItemGroup>
+
+  <!--  OpenTelemetry  -->
+  <ItemGroup>
+    <PackageVersion Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.19.0" />
+    <PackageVersion Include="OpenTelemetry.Extensions.Hosting" Version="1.19.0" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.19.0" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.Http" Version="1.19.0" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.Runtime" Version="1.19.0" />
+  </ItemGroup>
+
+  <!--  Misc  -->
+  <ItemGroup>
+    <PackageVersion Include="WixSharp_wix4" Version="2.14.1" />
+    <PackageVersion Include="Newtonsoft.Json" Version="13.0.4" />
+    <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+    <PackageVersion Include="DryIoc.Microsoft.DependencyInjection" Version="6.2.0" />
+    <PackageVersion Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.142" />
+    <PackageVersion Include="PolySharp" Version="1.16.0" />
+    <PackageVersion Include="Serilog" Version="4.4.0" />
+    <PackageVersion Include="WPFLocalizeExtensionEzzFork" Version="3.10.1" />
+    <PackageVersion Include="XAMLMarkupExtensionsEzzFork" Version="2.1.4" />
+    <PackageVersion Include="MailKit" Version="4.17.0" />
+    <PackageVersion Include="MimeKit" Version="4.17.0" />
+    <PackageVersion Include="Utf8StringInterpolation" Version="1.3.2" />
+    <PackageVersion Include="Humanizer.Core" Version="3.0.10" />
+    <PackageVersion Include="NetArchTest.eNhancedEdition" Version="1.4.5" />
+    <PackageVersion Include="QuestPDF" Version="2026.9.0" />
+    <PackageVersion Include="Verify" Version="33.1.0" />
+    <PackageVersion Include="SimpleInfoName" Version="3.2.0" />
+    <PackageVersion Include="DiffEngine" Version="20.3.1" />
+    <PackageVersion Include="Argon" Version="0.37.0" />
+    <PackageVersion Include="WpfAnalyzers" Version="4.1.1" />
+    <PackageVersion Include="Microsoft.VisualStudio.Threading.Analyzers" Version="18.7.23" />
+    <PackageVersion Include="EnumerableAsyncProcessor" Version="4.0.0" />
+    <PackageVersion Include="AsyncAwaitBestPractices" Version="10.0.0" />
+    <PackageVersion Include="AsyncAwaitBestPractices.MVVM" Version="10.0.0" />
+    <PackageVersion Include="AsyncKeyedLock" Version="8.1.2" />
+    <PackageVersion Include="AsyncFixer" Version="2.1.0" />
+    <PackageVersion Include="NetEvolve.Extensions.NUnit" Version="3.5.484" />
+    <PackageVersion Include="Ardalis.GuardClauses" Version="5.0.0" />
+    <PackageVersion Include="AutoMapper" Version="16.2.0" />
+    <PackageVersion Include="Azure.Extensions.AspNetCore.Configuration.Secrets" Version="1.4.0" />
+    <PackageVersion Include="Azure.Identity" Version="1.18.0" />
+    <PackageVersion Include="FluentValidation.DependencyInjectionExtensions" Version="12.1.1" />
+    <PackageVersion Include="MediatR" Version="14.0.0" />
+    <PackageVersion Include="MediatR.Contracts" Version="2.0.1" />
+    <PackageVersion Include="Scalar.AspNetCore" Version="2.12.50" />
+    <PackageVersion Include="System.IdentityModel.Tokens.Jwt" Version="8.16.0" />
+  
   </ItemGroup>
 </Project>
