@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <EnableNUnitRunner>true</EnableNUnitRunner>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ClinicManager.Infrastructure.IntegrationTests</RootNamespace>
+    <AssemblyName>ClinicManager.Infrastructure.IntegrationTests</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="nunit" />
+    <PackageReference Include="NUnit.Analyzers" />
+    <PackageReference Include="NUnit3TestAdapter" />
+    <PackageReference Include="Shouldly" />
+    <PackageReference Include="Microsoft.Testing.Extensions.CodeCoverage" />
+  </ItemGroup>
+
+</Project>
