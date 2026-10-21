@@ -12,6 +12,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Prism.DryIoc" Version="9.0.537" />
+    <PackageReference Include="Prism.DryIoc" />
   </ItemGroup>
 </Project>
