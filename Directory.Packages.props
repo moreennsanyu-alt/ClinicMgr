@@ -75,15 +75,15 @@
     <PackageVersion Include="Syncfusion.Shared.WPF" Version="$(SyncfusionVersion)" />
     <PackageVersion Include="Syncfusion.Shared.Base" Version="$(SyncfusionVersion)" />
     
-      <!--  Prism  -->
-  <ItemGroup>
+    <!--  Prism  -->
+  
     <PackageVersion Include="Prism.Core" Version="8.1.97" />
     <PackageVersion Include="Prism.Wpf" Version="8.1.97" />
     <PackageVersion Include="Prism.DryIoc" Version="8.1.97" />
-  </ItemGroup>
+  
 
-  <!--  System / transitive pins  -->
-  <ItemGroup>
+    <!--  System / transitive pins  -->
+  
     <PackageVersion Include="ThisAssembly.Constants" Version="2.1.5" />
     <PackageVersion Include="System.Security.AccessControl" Version="6.0.1" />
     <PackageVersion Include="System.Security.Cryptography.Xml" Version="10.0.12" />
@@ -100,10 +100,10 @@
     <PackageVersion Include="System.Diagnostics.DiagnosticSource" Version="10.0.12" />
     <PackageVersion Include="System.Net.Http" Version="4.3.4" />
     <PackageVersion Include="System.Text.RegularExpressions" Version="4.3.1" />
-  </ItemGroup>
+  
 
-  <!-- Testing  -->
-  <ItemGroup>
+    <!-- Testing  -->
+  
     <PackageVersion Include="xunit.v3" Version="4.0.0" />
     <PackageVersion Include="FluentAssertions" Version="8.5.0" />
     <PackageVersion Include="xunit.runner.visualstudio" Version="4.0.0" />
@@ -124,10 +124,10 @@
     <PackageVersion Include="FlaUI.TestUtilities" Version="5.0.0" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.3.0" />
     <PackageVersion Include="Respawn" Version="7.0.0" />
-  </ItemGroup>
+  
 
-  <!--  Microsoft.Extensions family  -->
-  <ItemGroup>
+    <!--  Microsoft.Extensions family  -->
+  
     <PackageVersion Include="Microsoft.Extensions.Hosting" Version="10.0.12" />
     <PackageVersion Include="Microsoft.Extensions.Logging" Version="10.0.12" />
     <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="10.0.12" />
@@ -146,10 +146,10 @@
     <PackageVersion Include="Microsoft.Extensions.ApiDescription.Server" Version="10.0.12" />
     <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="10.3.0" />
     <PackageVersion Include="Microsoft.Extensions.ServiceDiscovery" Version="10.3.0" />
-  </ItemGroup>
+  
 
-  <!-- ASP.NET Core / EF Core  -->
-  <ItemGroup>
+    <!-- ASP.NET Core / EF Core  -->
+  
     <PackageVersion Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="10.0.12" />
     <PackageVersion Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="10.0.12" />
     <PackageVersion Include="Microsoft.AspNetCore.Mvc.Testing" Version="10.0.12" />
@@ -162,19 +162,19 @@
     <PackageVersion Include="Microsoft.Data.SqlClient" Version="6.1.4" />
     <PackageVersion Include="Microsoft.Build.Tasks.Core" Version="18.3.3" />
     <PackageVersion Include="Microsoft.Build.Utilities.Core" Version="18.3.3" />
-  </ItemGroup>
+  
 
-  <!--  OpenTelemetry  -->
-  <ItemGroup>
+     <!--  OpenTelemetry  -->
+  
     <PackageVersion Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.19.0" />
     <PackageVersion Include="OpenTelemetry.Extensions.Hosting" Version="1.19.0" />
     <PackageVersion Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.19.0" />
     <PackageVersion Include="OpenTelemetry.Instrumentation.Http" Version="1.19.0" />
     <PackageVersion Include="OpenTelemetry.Instrumentation.Runtime" Version="1.19.0" />
-  </ItemGroup>
+  
 
-  <!--  Misc  -->
-  <ItemGroup>
+    <!--  Misc  -->
+  
     <PackageVersion Include="WixSharp_wix4" Version="2.14.1" />
     <PackageVersion Include="Newtonsoft.Json" Version="13.0.4" />
     <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.4.0" />
