@@ -7,9 +7,9 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <!-- General (colors, brushes, common styles) -->
-                <ResourceDictionary Source="/ClinicManager.Win;component/Resources/Styles/GeneralDictionary.xaml" />
+                <ResourceDictionary Source="/ClinicMgr;component/Resources/Styles/GeneralDictionary.xaml" />
                 <!-- Control specific styles -->
-                <ResourceDictionary Source="/ClinicManager.Win;component/Resources/Styles/ControlStyles.xaml" />
+                <ResourceDictionary Source="/ClinicMgr;component/Resources/Styles/ControlStyles.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
