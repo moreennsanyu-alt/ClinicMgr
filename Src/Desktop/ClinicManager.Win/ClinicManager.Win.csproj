@@ -43,9 +43,6 @@
   <PackageReference Include="Syncfusion.GridCommon.Wpf" />
   <PackageReference Include="Syncfusion.PivotTable.Wpf" />
   <PackageReference Include="Syncfusion.PivotAnalysis.Base" />
-  <PackageReference Include="Syncfusion.OlapGrid.WPF" />
-  <PackageReference Include="Syncfusion.OlapGauge.WPF" />
-  <PackageReference Include="Syncfusion.OlapShared.WPF" />
   <PackageReference Include="Syncfusion.Data.WPF" />
   <PackageReference Include="Syncfusion.Grouping.Base" />
   <PackageReference Include="Syncfusion.Linq.Base" />
