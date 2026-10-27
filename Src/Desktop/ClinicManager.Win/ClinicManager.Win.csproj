@@ -6,7 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <RootNamespace>ClinicManager.Win</RootNamespace>
-    <AssemblyName>ClinicManager.Win</AssemblyName>
+    <AssemblyName>ClinicMgr</AssemblyName>
     <LangVersion>latest</LangVersion>
     <EnableWindowsTargeting>true</EnableWindowsTargeting>
   </PropertyGroup>
