@@ -137,6 +137,7 @@
   <PackageReference Include="WpfAnalyzers" PrivateAssets="all" />
   <PackageReference Include="Microsoft.VisualStudio.Threading.Analyzers" PrivateAssets="all" />
   <PackageReference Include="AsyncFixer" PrivateAssets="all" />
+  <PackageReference Include="DotNetProjects.SVGImage" />
 </ItemGroup>
 </Project>
 
