@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <Constant Include="BuildInfo.ApplicationPath" Value="$(ArtifactsPath)\bin\ClinicManager.Win\debug\ClinicMgr.exe" />
+    <Constant Include="TestInfo.TestsMediaPath" Value="$(ArtifactsPath)\Attachments\TestResults" />
   </ItemGroup>
 
   <ItemGroup>
