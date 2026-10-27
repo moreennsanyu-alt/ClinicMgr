@@ -1,7 +1,8 @@
 <Project>
   <PropertyGroup>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
-    <!-- Set this to your installed Syncfusion version -->
+    <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
+      <CentralPackageVersionOverrideEnabled>false</CentralPackageVersionOverrideEnabled>
     <SyncfusionVersion>35.1.40</SyncfusionVersion>
   </PropertyGroup>
 
