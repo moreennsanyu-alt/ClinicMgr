@@ -20,7 +20,7 @@ namespace ClinicManager.E2E.Tests.Core
         /// <summary>
         /// Member which holds the current video recorder.
         /// </summary>
-        private VideoRecorder _recorder;
+        private VideoRecorder _recorder = null!;
 
         /// <summary>
         /// Test info captured at start. The recorder runs on its own thread,
@@ -151,7 +151,7 @@ namespace ClinicManager.E2E.Tests.Core
             if (Automation != null)
             {
                 Automation.Dispose();
-                Automation = null;
+                Automation = null!;
             }
 
             GC.SuppressFinalize(this);
@@ -177,7 +177,7 @@ namespace ClinicManager.E2E.Tests.Core
                 Application.Close();
                 Retry.WhileFalse(() => Application.HasExited, TimeSpan.FromSeconds(2), ignoreException: true);
                 Application.Dispose();
-                Application = null;
+                Application = null!;
             }
         }
 
@@ -252,7 +252,7 @@ namespace ClinicManager.E2E.Tests.Core
                     var ctx = TestContext.Current;
                     ctx.AddAttachment(Path.GetFileName(_recorder.TargetVideoPath), File.ReadAllBytes(_recorder.TargetVideoPath), "video/x-msvideo");
                 }
-                _recorder = null;
+                _recorder = null!;
             }
         }
 
@@ -271,7 +271,7 @@ namespace ClinicManager.E2E.Tests.Core
             catch (Exception ex)
             {
                 Logger.Default.Warn("Failed to save screen shot to directory: {0}, filename: {1}, Ex: {2}", TestsMediaPath, imagePath, ex);
-                return null;
+                return null!;
             }
         }
 
