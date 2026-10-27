@@ -21,10 +21,5 @@ public partial class App : PrismApplication
     protected override void OnInitialized()
     {
         base.OnInitialized();
-
-        if (MainWindow is ShellWindow shellWindow)
-        {
-            shellWindow.MainContent.Content = Container.Resolve<LoginView>();
-        }
     }
 }
