@@ -12,6 +12,134 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Prism.DryIoc" />
-  </ItemGroup>
+  <PackageReference Include="Syncfusion.Licensing" />
+
+  <!-- Smart / AI -->
+  <PackageReference Include="Syncfusion.SfSmartComponents.WPF" />
+  <PackageReference Include="Syncfusion.SmartFormRecognizer.Wpf" />
+  <PackageReference Include="Syncfusion.SfChat.WPF" />
+  <PackageReference Include="Syncfusion.SfMarkdownViewer.WPF" />
+
+  <!-- Themes / Skin -->
+  <PackageReference Include="Syncfusion.SfSkinManager.WPF" />
+  <PackageReference Include="Syncfusion.Themes.Windows11Dark.WPF" />
+  <PackageReference Include="Syncfusion.Themes.Windows11Light.WPF" />
+
+  <!-- Document processing -->
+  <PackageReference Include="Syncfusion.Pdf.Wpf" />
+  <PackageReference Include="Syncfusion.Pdf.Net.Core" />
+  <PackageReference Include="Syncfusion.PdfToImageConverter.WPF" />
+  <PackageReference Include="Syncfusion.PdfViewer.WPF" />
+  <PackageReference Include="Syncfusion.DocIO.Wpf" />
+  <PackageReference Include="Syncfusion.XlsIO.Wpf" />
+  <PackageReference Include="Syncfusion.XlsIO.Net.Core" />
+  <PackageReference Include="Syncfusion.ExcelToPdfConverter.Wpf" />
+  <PackageReference Include="Syncfusion.OfficeChart.Base" />
+  <PackageReference Include="Syncfusion.DataGridExcelExport.Wpf" />
+
+  <!-- Grids / Pivot / Data -->
+  <PackageReference Include="Syncfusion.SfGrid.WPF" />
+  <PackageReference Include="Syncfusion.Grid.WPF" />
+  <PackageReference Include="Syncfusion.GridCommon.Wpf" />
+  <PackageReference Include="Syncfusion.PivotTable.Wpf" />
+  <PackageReference Include="Syncfusion.PivotAnalysis.Base" />
+  <PackageReference Include="Syncfusion.OlapGrid.WPF" />
+  <PackageReference Include="Syncfusion.OlapGauge.WPF" />
+  <PackageReference Include="Syncfusion.OlapShared.WPF" />
+  <PackageReference Include="Syncfusion.Data.WPF" />
+  <PackageReference Include="Syncfusion.Grouping.Base" />
+  <PackageReference Include="Syncfusion.Linq.Base" />
+  <PackageReference Include="Syncfusion.Calculate.Base" />
+
+  <!-- Charts / Gauges / Maps -->
+  <PackageReference Include="Syncfusion.SfChart.WPF" />
+  <PackageReference Include="Syncfusion.SfSunburstChart.WPF" />
+  <PackageReference Include="Syncfusion.SfSmithChart.WPF" />
+  <PackageReference Include="Syncfusion.SfGauge.WPF" />
+  <PackageReference Include="Syncfusion.SfBulletGraph.WPF" />
+  <PackageReference Include="Syncfusion.SfMaps.WPF" />
+
+  <!-- UI controls -->
+  <PackageReference Include="Syncfusion.SfToastNotification.WPF" />
+  <PackageReference Include="Syncfusion.SfHubTile.WPF" />
+  <PackageReference Include="Syncfusion.SfSpellChecker.WPF" />
+  <PackageReference Include="Syncfusion.SfTextInputLayout.WPF" />
+  <PackageReference Include="Syncfusion.SfChromelessWindow.WPF" />
+  <PackageReference Include="Syncfusion.SfScheduler.WPF" />
+  <PackageReference Include="Syncfusion.SfKanban.WPF" />
+  <PackageReference Include="Syncfusion.SfNavigationDrawer.WPF" />
+  <PackageReference Include="Syncfusion.Edit.WPF" />
+  <PackageReference Include="Syncfusion.SfProgressBar.WPF" />
+  <PackageReference Include="Syncfusion.SfTreeView.WPF" />
+  <PackageReference Include="Syncfusion.SfAccordion.WPF" />
+  <PackageReference Include="Syncfusion.PropertyGrid.WPF" />
+  <PackageReference Include="Syncfusion.SfRichTextBoxAdv.WPF" />
+  <PackageReference Include="Syncfusion.SfRadialMenu.WPF" />
+  <PackageReference Include="Syncfusion.SfBusyIndicator.WPF" />
+  <PackageReference Include="Syncfusion.SfInput.WPF" />
+  <PackageReference Include="Syncfusion.Tools.WPF" />
+  <PackageReference Include="Syncfusion.Shared.WPF" />
+  <PackageReference Include="Syncfusion.Shared.Base" />
+
+  <!-- Prism -->
+  <PackageReference Include="Prism.Core" />
+  <PackageReference Include="Prism.Wpf" />
+  <PackageReference Include="Prism.DryIoc" />
+
+  <!-- System / transitive pins -->
+  <PackageReference Include="ThisAssembly.Constants" />
+  <PackageReference Include="System.Security.AccessControl" />
+  <PackageReference Include="System.Security.Cryptography.Xml" />
+  <PackageReference Include="System.Text.Json" />
+  <PackageReference Include="System.Runtime.CompilerServices.Unsafe" />
+  <PackageReference Include="System.Collections.Immutable" />
+  <PackageReference Include="Microsoft.Windows.Compatibility" />
+  <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" />
+  <PackageReference Include="System.Reflection.Metadata" />
+  <PackageReference Include="Microsoft.CodeAnalysis" />
+  <PackageReference Include="System.ValueTuple" />
+  <PackageReference Include="System.Memory" />
+  <PackageReference Include="Microsoft.VisualBasic" />
+  <PackageReference Include="System.Diagnostics.DiagnosticSource" />
+  <PackageReference Include="System.Net.Http" />
+  <PackageReference Include="System.Text.RegularExpressions" />
+
+
+  <!-- Microsoft.Extensions family -->
+  <PackageReference Include="Microsoft.Extensions.Hosting" />
+  <PackageReference Include="Microsoft.Extensions.Logging" />
+  <PackageReference Include="Microsoft.Extensions.Logging.Debug" />
+  <PackageReference Include="Microsoft.Extensions.Logging.Console" />
+  <PackageReference Include="Microsoft.Extensions.Configuration" />
+  <PackageReference Include="Microsoft.Extensions.Configuration.Xml" />
+  <PackageReference Include="Microsoft.Extensions.Configuration.CommandLine" />
+  <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" />
+  <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" />
+  <PackageReference Include="Microsoft.Extensions.Configuration.Binder" />
+  <PackageReference Include="Microsoft.Extensions.Configuration.Json" />
+  <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" />
+  <PackageReference Include="Microsoft.Extensions.Options" />
+  <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" />
+
+
+  <PackageReference Include="CommunityToolkit.Mvvm" />
+  <PackageReference Include="DryIoc.Microsoft.DependencyInjection" />
+  <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" />
+  <PackageReference Include="Serilog" />
+  <PackageReference Include="WPFLocalizeExtensionEzzFork" />
+  <PackageReference Include="XAMLMarkupExtensionsEzzFork" />
+  <PackageReference Include="Utf8StringInterpolation" />
+  <PackageReference Include="Humanizer.Core" />
+  <PackageReference Include="EnumerableAsyncProcessor" />
+  <PackageReference Include="AsyncAwaitBestPractices" />
+  <PackageReference Include="AsyncAwaitBestPractices.MVVM" />
+  <PackageReference Include="AsyncKeyedLock" />
+  <PackageReference Include="Ardalis.GuardClauses" />
+  <PackageReference Include="AutoMapper" />
+  <!-- Analyzers -->
+  <PackageReference Include="WpfAnalyzers" PrivateAssets="all" />
+  <PackageReference Include="Microsoft.VisualStudio.Threading.Analyzers" PrivateAssets="all" />
+  <PackageReference Include="AsyncFixer" PrivateAssets="all" />
+</ItemGroup>
 </Project>
+
