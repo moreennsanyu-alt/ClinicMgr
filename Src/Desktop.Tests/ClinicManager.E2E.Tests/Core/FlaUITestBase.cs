@@ -63,12 +63,18 @@ namespace ClinicManager.E2E.Tests.Core
         /// </summary>
         protected virtual bool RecordVideo => true;
 
+        static FlaUITestBase()
+        {
+             NativeMethods.SetProcessDPIAware();
+        }
         /// <summary>
         /// Path of the directory for the screenshots and videos for the tests.
         /// Defaults to c:\temp\testsmedia.
         /// </summary>
+        public static string _TestsMediaPath = TestInfo.TestsMediaPath;
+    
         protected virtual string TestsMediaPath =>
-            Path.Combine(@"c:\temp\testsmedia", SanitizeFileName(_testMethodName ?? "unknown"), _testDateTime);
+            Path.Combine(_TestsMediaPath, SanitizeFileName(_testMethodName ?? "unknown"), _testDateTime);
 
         protected  AutomationBase GetAutomation()
         {
